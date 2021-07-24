@@ -5,6 +5,7 @@
 - Huomannut liian myöhään, että deadline olikin lauantaina eikä sunnuntaina
 - Tehnyt reposition ja sinne READMEn, määrittelydokumentin sekä ensimmäisen viikkoraportin
 - Rekisteröitynyt kurssille Labtoolissa ja linkannut repositioni sinne
+- Laittanut poetryn, pytestin ja pylintin käyttövalmiiksi
 ## Miten ohjelma on edistynyt
 Ohjelma on alkanut hahmottumaan mielessäni, mutta koodi ei ole vielä edistynyt lainkaan.
 ## Mitä olen oppinut viikolla
@@ -16,3 +17,5 @@ Se vastaa kyllä annettua aihetta "Miten löydetään tehokkaasti nopein/lyhin r
 ## Mitä seuraavaksi
 Ensinnäkin teen sen, mitä seuraavan viikon palautuksessa vaaditaan. Ohjelman kehittämisen suhteen ainakin luon generaattori-funktion ruudukolle. Saatan myös tehdä
 ruudukosta luokka olion. Mietin asiaa tarkemmin tehdessäni sitä.
+## Käytetyt tunnit
+Vaikea sanoa kauanko käytin aikaa tutkimiseen ja aiheen miettimiseen, mutta reposition valmisteluun käytin pari tuntia.
