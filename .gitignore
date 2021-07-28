@@ -1,3 +1,5 @@
 /poetry.lock
 /pyproject.toml
-/.pylintrc
+/htmlcov
+**/__pycache__/
+/.coverage
