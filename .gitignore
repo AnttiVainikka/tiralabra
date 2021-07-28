@@ -1,5 +1,4 @@
 /poetry.lock
-/pyproject.toml
 /htmlcov
 **/__pycache__/
 /.coverage
