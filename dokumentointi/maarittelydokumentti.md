@@ -15,4 +15,3 @@ Projektin kieli on suomi ja koodin kieli on Python.
 ## Lähteet
 - https://www.redblobgames.com/pathfinding/a-star/introduction.html
 - https://www.gamedev.net/tutorials/programming/artificial-intelligence/jump-point-search-fast-a-pathfinding-for-uniform-cost-grids-r4220/
-- https://www.educative.io/edpresso/what-is-uniform-cost-search
