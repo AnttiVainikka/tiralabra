@@ -4,14 +4,15 @@
 - Luonut funktion ruudukon generoimiselle ja luonut funktiolle testit.
 - Luonut funktion ruudukon piirtämiselle pygamella.
 - Päivittänyt määrittelydokumenttiani ja lisännyt README:hen käyttöohjeet.
+- Luonut funktion ruudukon ratkaisemiselle A* algoritmilla ja funktiolle testit.
+- Päivittänyt piirtämis funktion piirtämään myös ratkaisun ruudukolle.
 ## Miten ohjelma on edistynyt
-Ohjelma kykenee nyt generoimaan ja piirtämään ruudukon.
+Ohjelma kykenee nyt generoimaan ja piirtämään ruudukon sekä ratkaisemaan ruudukon A* algoritmilla ja piirtämään löydetyn ratkaisun.
 ## Mitä olen oppinut viikolla
-- En varsinaisesti mitään uutta, mutta kertasin vanhoja asioita, kuten pygamen käyttöä.
+- Opin tekemään A* algoritmia käyttävän ratkaisun reitinhaulle.
 ## Epäselvyydet ja vaikeudet
-En osaa ainakaan vielä hahmottaa kunnolla millainen aika- ja tilavaatimus algoritmillani tulee olemaan. En ole myöskään täysin varma, miten JPS toimii vielä, mutta
-tutkiskelen asiaa vielä.
+En ole varma, miten tehdä JPS algoritmi ruudukollani. Kaikissa esimerkeissä, mitä löydän, se toteutetaan ruudukolla, jossa on vain samanarvoisia ruutuja ja esteitä. Ruudukossani ei ole esteitä, vaan eri arvoisia ruutuja (tällä hetkellä arvoilla 1, 2, 3 ja 4). Voiko ruudukon silti toteuttaa JPS:llä vai pitääkö löytää toinen algoritmi vai pitääkö muokata ruudukkoani?
 ## Mitä seuraavaksi
-Seuraavaksi alan kehittämään A* algoritmia ja ehkä myös laajennan käyttöliittymää.
+Seuraavaksi alan kehittämään käyttöliittymää ja mahdollisesti aloitan JPS algoritmin työstämisen.
 ## Käytetyt tunnit
-Noin 5.
+Noin 9.
