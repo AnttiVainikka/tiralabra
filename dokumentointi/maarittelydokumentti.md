@@ -1,6 +1,6 @@
 # Määrittelydokumentti
 ## Käytetyt algoritmit
-Käytän A* ja JPS haku algoritmeja löytämään lyhimmän reitin kahden ruudun välillä ruudukossa ja vertaan niiden tehokkuuksia.
+Käytän A* ja JPS haku algoritmeja löytämään lyhyimmän reitin kahden ruudun välillä ruudukossa ja vertaan niiden tehokkuuksia.
 ## Ratkaistava ongelma
 Generoin satunnaisen ruudukon, johon satunnaisesti valitaan lähtö- sekä maaliruutu, ja ratkaisen, mikä on nopein reitti lähtöruudusta maaliin. Jokaiseen ruutuun
 matkustamiseen menevä aika tulee riippumaan kyseisen ruudun väristä.
@@ -15,3 +15,4 @@ Projektin kieli on suomi ja koodin kieli on Python.
 ## Lähteet
 - https://www.redblobgames.com/pathfinding/a-star/introduction.html
 - https://www.gamedev.net/tutorials/programming/artificial-intelligence/jump-point-search-fast-a-pathfinding-for-uniform-cost-grids-r4220/
+- https://zerowidth.com/2013/a-visual-explanation-of-jump-point-search.html
