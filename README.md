@@ -7,7 +7,7 @@
 ## Käyttöohje
 - Lataa tiedostot koneellesi.
 - Navigoi lataamaasi kansioon terminaalissa ja anna komento "poetry install".
-- Aloita ohjelma komennolla "poetry run invoke start". Tällä hetkellä ohjelma vain piirtää ruudukot. Voit sulkea ohjelman painamalla raksia ikkunassa.
+- Aloita ohjelma komennolla "poetry run invoke start". Ohjelma piirtää ruudukon vasemmalle ja ratkaisun sille oikealle. Ratkaisussa valkoiset ruudut ovat tutkittuja ruutuja ja mustat ruudut algoritmin löytämä reitti.
 - Aktivoi automaattiset testit komennolla "poetry run invoke test".
 - Lataa testien kattavuus reportti komennolla "poetry run invoke coverage-report".
 - Tarkista koodin pylint arvio komennolla "poetry run invoke lint".
