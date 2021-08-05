@@ -1,16 +1,54 @@
 import pygame
+from time import perf_counter
 from ruudukko.ruudukko import generoi_ruudukko
 from ruudukko.reitti import maarita_reitti
+from ruudukko.resetointi import resetoi_ruudukko
 from kayttoliittyma.ruudukko import piirra_ruudukko
+from kayttoliittyma.ruudukko import piirra_ratkaisu
 from algoritmit.A import lyhyin_reitti_a
+from algoritmit.JPS import lyhyin_reitti_jps
 
-ruudukko = generoi_ruudukko(20)
-vieraillut = lyhyin_reitti_a(ruudukko)
-reitti = vieraillut[1]
-reitti = maarita_reitti(reitti,ruudukko[4])
-vieraillut = vieraillut[0]
-piirra_ruudukko(ruudukko[0],vieraillut,reitti,ruudukko[5])
+pituus = 20
+ruudukko = generoi_ruudukko(pituus)
+piirra_ruudukko(ruudukko[0],ruudukko[5])
+
 while True:
+
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
             exit()
+
+        if event.type == pygame.KEYDOWN:
+
+            if event.key == pygame.K_1:
+
+                aika = perf_counter()
+                vieraillut = lyhyin_reitti_a(ruudukko)
+                loppu = perf_counter()
+                aika = aika - loppu
+                print(aika)
+                if vieraillut != False:
+                    reitti = vieraillut[1]
+                    reitti = maarita_reitti(reitti,ruudukko[4],vieraillut[0],ruudukko[3])
+                    vieraillut = vieraillut[0]
+                    piirra_ratkaisu("vasen",vieraillut,reitti,ruudukko[5],aika)
+                    resetoi_ruudukko(ruudukko[0],ruudukko[1],ruudukko[2],ruudukko[5])
+
+            if event.key == pygame.K_2:
+
+                aika = perf_counter()
+                vieraillut = lyhyin_reitti_jps(ruudukko)
+                loppu = perf_counter()
+                aika = aika - loppu
+                print(aika)
+                if vieraillut != False:
+                    reitti = vieraillut[1]
+                    reitti = maarita_reitti(reitti,ruudukko[4],vieraillut[0],ruudukko[3])
+                    vieraillut = vieraillut[0]
+                    piirra_ratkaisu("oikea",vieraillut,reitti,ruudukko[5],aika)
+                    resetoi_ruudukko(ruudukko[0],ruudukko[1],ruudukko[2],ruudukko[5])
+
+            if event.key == pygame.K_RETURN:
+                ruudukko = generoi_ruudukko(pituus)
+                piirra_ruudukko(ruudukko[0],ruudukko[5])

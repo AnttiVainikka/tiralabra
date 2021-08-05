@@ -23,7 +23,7 @@ def generoi_ruudukko(x):
                 vierailtu[(i,j)] = False
                 matka[(i,j)] = 0
             else:
-                ruudukko[(i,j)] = choice([1,1,1,-1])
+                ruudukko[(i,j)] = choice([1,1,1,1,-1])
                 vierailtu[(i,j)] = False
                 matka[(i,j)] = 10**9
 
