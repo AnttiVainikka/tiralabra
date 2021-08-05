@@ -2,6 +2,7 @@
 ## Viikkoraportit
 - [Viikkoraportti 1](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti1.md)
 - [Viikkoraportti 2](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti2.md)
+- [Viikkoraportti 3](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti3.md)
 ## Dokumentaatio
 - [Määrittelydokumentti](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/maarittelydokumentti.md)
 ## Käyttöohje
