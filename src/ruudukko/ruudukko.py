@@ -1,9 +1,10 @@
 from random import randint
+from random import choice
 
 def generoi_ruudukko(x):
     """Generoi x-pituisen ruudukon sanakirjana ja palauttaa ruudukon,
     kaksi muuta sanakirjaa sekä tiedon aloitus- ja loppuruuduista"""
-    ruudukko = {} #tallettaa tiedon, miten iso hinta ruutuun matkustamisella on
+    ruudukko = {} #tallettaa tiedon, voiko ruutuun matkustaa
     vierailtu = {} #tallettaa tiedon onko ruudussa vierailtu jo, kun tutkitaan reittiä
     matka = {} #tallettaa tiedon, miten pitkä matka ruutuun on aloitusruudusta
     aloitus_ruutu = (randint(1,x),randint(1,x))
@@ -22,7 +23,7 @@ def generoi_ruudukko(x):
                 vierailtu[(i,j)] = False
                 matka[(i,j)] = 0
             else:
-                ruudukko[(i,j)] = randint(1,4)
+                ruudukko[(i,j)] = choice([1,1,1,-1])
                 vierailtu[(i,j)] = False
                 matka[(i,j)] = 10**9
 

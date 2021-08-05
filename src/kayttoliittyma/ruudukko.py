@@ -12,12 +12,10 @@ def piirra_ruudukko(ruudukko,vieraillut,reitti,pituus):
     erottaja = [0,ikkuna_leveys-ruudukon_koko-sivu*2]
 
     varit = {}
-    varit[0] = (0, 0, 0)
-    varit[1] = (200,0,0)
-    varit[2] = (0,200,0)
-    varit[3] = (0,0,200)
-    varit[4] = (125,125,125)
-    varit[5] = (255,255,255)
+    varit[0] = (250, 250, 250)
+    varit[1] = (125,125,125)
+    varit[-1] = (0,0,0)
+    varit[5] = (0, 120, 0)
 
     ikkuna.fill((125,200,200))
     for erotus in erottaja:

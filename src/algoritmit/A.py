@@ -30,6 +30,8 @@ def lyhyin_reitti_a(ruudukko):
             naapurit.append((ruutu[0],ruutu[1]-1))
 
         for naapuri in naapurit:
+            if ruudukko[naapuri] == -1:
+                continue
             if naapuri == loppu_ruutu:
                 reitti[loppu_ruutu] = ruutu
                 return [vieraillut,reitti]
