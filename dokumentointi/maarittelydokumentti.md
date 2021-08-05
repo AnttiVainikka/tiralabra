@@ -2,10 +2,9 @@
 ## Käytetyt algoritmit
 Käytän A* ja JPS haku algoritmeja löytämään lyhyimmän reitin kahden ruudun välillä ruudukossa ja vertaan niiden tehokkuuksia.
 ## Ratkaistava ongelma
-Generoin satunnaisen ruudukon, johon satunnaisesti valitaan lähtö- sekä maaliruutu, ja ratkaisen, mikä on nopein reitti lähtöruudusta maaliin. Jokaiseen ruutuun
-matkustamiseen menevä aika tulee riippumaan kyseisen ruudun väristä.
+Generoin satunnaisen ruudukon, johon satunnaisesti valitaan lähtö- sekä maaliruutu, ja ratkaisen, mikä on nopein reitti lähtöruudusta maaliin. Osa ruuduista toimii esteinä, joiden läpi ei voida kulkea.
 ## Syötteet ja niiden käyttö
-Syötteenä voidaan antaa numero, joka määrittää ruudukon koon. Eli esimerkiksi syöte 9 loisi 9x9 ruudukon. Suurilla syötteillä voidaan testata algoritmin tehokkuutta.
+Tehokkuutta testatessa voidaan antaa ruudukon koko numerona (esimerkiksi syöte 200 luo 200x200 ruudukon), kun taas ratkaisujen havainnollistamisessa käyttäjä voi ratkaista vasemman ruudukon A*:lla painamalla näppäintä 1, ratkaista oikean ruudukon JPS:lla painamalla näppäintä 2 ja generoida uuden ruudukon enterillä.
 ## Tavoiteltavat aika- ja tilavaativuudet
 Näistä en osaa vielä sanoa. Katson asiaa tarkemmin, kun koodi on edennyt.
 ## Opinto-ohjelma
