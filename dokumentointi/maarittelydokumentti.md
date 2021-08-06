@@ -4,7 +4,7 @@ Käytän A* ja JPS haku algoritmeja löytämään lyhyimmän reitin kahden ruudu
 ## Ratkaistava ongelma
 Generoin satunnaisen ruudukon, johon satunnaisesti valitaan lähtö- sekä maaliruutu, ja ratkaisen, mikä on nopein reitti lähtöruudusta maaliin. Osa ruuduista toimii esteinä, joiden läpi ei voida kulkea.
 ## Syötteet ja niiden käyttö
-Tehokkuutta testatessa voidaan antaa ruudukon koko numerona (esimerkiksi syöte 200 luo 200x200 ruudukon), kun taas ratkaisujen havainnollistamisessa käyttäjä voi ratkaista vasemman ruudukon A*:lla painamalla näppäintä 1, ratkaista oikean ruudukon JPS:lla painamalla näppäintä 2 ja generoida uuden ruudukon enterillä.
+Tehokkuutta testatessa voidaan antaa ruudukon koko numerona (esimerkiksi syöte 200 luo 200x200 ruudukon), kun taas ratkaisujen havainnollistamisessa käyttäjä voi ratkaista vasemman ruudukon A*:lla painamalla näppäintä 1, ratkaista oikean ruudukon JPS:lla painamalla näppäintä 2 ja generoida uuden ruudukon enterillä. Ruudukon luomisessa voidaan myös määrittää, miten tiheään halutaan esteitä olevan.
 ## Tavoiteltavat aika- ja tilavaativuudet
 Näistä en osaa vielä sanoa. Katson asiaa tarkemmin, kun koodi on edennyt.
 ## Opinto-ohjelma
