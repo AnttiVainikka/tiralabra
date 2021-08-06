@@ -4,8 +4,8 @@ from ruudukko.ruudukko import generoi_ruudukko
 class TestGenerointi(unittest.TestCase):
 
     def test_ruudukko_generoi_oikein(self):
-        ruudukko = generoi_ruudukko(9)[0]
-        varit = [0,1,2,3,4]
+        ruudukko = generoi_ruudukko(9,3)[0]
+        varit = [-1,0,1]
         oikein = True
         for i in range(1,10):
             for j in range(1,10):
@@ -14,7 +14,7 @@ class TestGenerointi(unittest.TestCase):
         self.assertEqual(oikein,True)
 
     def test_vierailu_lista_generoi_oikein(self):
-        vierailtu = generoi_ruudukko(9)[1]
+        vierailtu = generoi_ruudukko(9,3)[1]
         oikein = True
         for i in range(1,10):
             for j in range(1,10):
@@ -26,7 +26,7 @@ class TestGenerointi(unittest.TestCase):
         oikein = True
         for _ in range(50):
             nollat = 0
-            ruudukko = generoi_ruudukko(2)[0]
+            ruudukko = generoi_ruudukko(2,1)[0]
             for i in range(1,3):
                 for j in range(1,3):
                     if ruudukko[(i,j)] == 0:

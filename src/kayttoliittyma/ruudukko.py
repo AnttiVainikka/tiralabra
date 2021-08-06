@@ -1,11 +1,13 @@
 import pygame
 from kayttoliittyma.ohjeet import kirjoita_ohjeet
+from kayttoliittyma.mitat import fontit,ikkuna_ja_ruudukko
 pygame.init()
 
-fontti = pygame.font.SysFont("Arial", 25)
-ikkuna_leveys = 1800
-ikkuna_korkeus = 800
-ruudukon_koko = 600
+fontti = fontit()[0]
+ikkuna = ikkuna_ja_ruudukko()
+ikkuna_leveys = ikkuna[0]
+ikkuna_korkeus = ikkuna[1]
+ruudukon_koko = ikkuna[2]
 ikkuna = pygame.display.set_mode((ikkuna_leveys, ikkuna_korkeus))
 
 def piirra_ruudukko(ruudukko,pituus):

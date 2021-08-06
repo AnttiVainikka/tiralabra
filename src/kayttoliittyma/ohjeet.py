@@ -1,11 +1,10 @@
 import pygame
+from kayttoliittyma.mitat import fontit,ikkuna_ja_ruudukko
 pygame.init()
 
-fontti = pygame.font.SysFont("Arial", 25)
-ikkuna_leveys = 1800
-ikkuna_korkeus = 800
-ruudukon_koko = 600
-ikkuna = pygame.display.set_mode((ikkuna_leveys, ikkuna_korkeus))
+ikkuna = ikkuna_ja_ruudukko()
+ikkuna = pygame.display.set_mode((ikkuna[0], ikkuna[1]))
+fontti = fontit()[0]
 
 def kirjoita_ohjeet():
     ikkuna.blit(fontti.render("ENTER: Uusi ruudukko",True,(200,0,0)),(650,50))
