@@ -8,7 +8,7 @@ from algoritmit.A import lyhyin_reitti_a
 from algoritmit.JPS import lyhyin_reitti_jps
 
 pituus = 20
-esteet = 2
+esteet = 4
 ruudukko = generoi_ruudukko(pituus,esteet)
 piirra_ruudukko(ruudukko[0],ruudukko[5])
 
