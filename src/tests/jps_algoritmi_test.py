@@ -1,6 +1,6 @@
 import unittest
 from algoritmit.JPS import lyhyin_reitti_jps
-from ruudukko.ruudukko import generoi_ruudukko
+from ruudukko.ruudukko import generoi_ruudukko,ruudukko1
 
 class TestAlgoritmiJPS(unittest.TestCase):
 
@@ -12,3 +12,8 @@ class TestAlgoritmiJPS(unittest.TestCase):
             if ratkaisu is False:
                 oikein = False
         self.assertEqual(oikein,True)
+    
+    def test_algoritmi_selvittaa_ruudukko_1(self):
+        ruudukko = ruudukko1()
+        ratkaisu = lyhyin_reitti_jps(ruudukko)
+        self.assertTrue(ratkaisu is not False)

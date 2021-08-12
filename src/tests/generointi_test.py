@@ -5,7 +5,7 @@ class TestGenerointi(unittest.TestCase):
 
     def test_ruudukko_generoi_oikein(self):
         ruudukko = generoi_ruudukko(9,3)[0]
-        varit = [-1,0,1]
+        varit = [-1,0,1,10]
         oikein = True
         for i in range(1,10):
             for j in range(1,10):
@@ -29,7 +29,7 @@ class TestGenerointi(unittest.TestCase):
             ruudukko = generoi_ruudukko(2,1)[0]
             for i in range(1,3):
                 for j in range(1,3):
-                    if ruudukko[(i,j)] == 0:
+                    if ruudukko[(i,j)] == 0 or ruudukko[(i,j)] == 10:
                         nollat += 1
             if nollat != 2:
                 oikein = False

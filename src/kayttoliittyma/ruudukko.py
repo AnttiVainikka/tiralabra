@@ -19,9 +19,9 @@ def piirra_ruudukko(ruudukko,pituus):
 
     varit = {}
     varit[0] = (250, 250, 250)
+    varit[10] = (0, 180, 0)
     varit[1] = (125,125,125)
     varit[-1] = (0,0,0)
-    varit[2] = (0, 120, 0)
 
     ikkuna.fill((125,200,200))
     for erotus in erottaja:
@@ -32,27 +32,26 @@ def piirra_ruudukko(ruudukko,pituus):
     kirjoita_ohjeet()
     pygame.display.flip()
 
-def piirra_ratkaisu(puoli,vieraillut,reitti,pituus,aika):
+def piirra_ratkaisu(puoli,vieraillut,reitti,pituus,aika,matka):
     """Piirtää ratkaisun ruudukolle. Puoli määrittää piirretäänkö
     ratkaisu oikealle vai vasemmalle ruudukolle."""
 
     sivu = int(ruudukon_koko/pituus)
     if puoli == "vasen":
         erotus = 0
-
     else:
         erotus = ikkuna_leveys-ruudukon_koko-sivu*2
 
     for i in range(1,pituus + 1):
         for j in range(1,pituus + 1):
-            if (i,j) in vieraillut:
-                if (i,j) in reitti:
-                    pygame.draw.rect(ikkuna, (250, 250, 250),
-                    pygame.Rect(sivu*i+erotus, sivu*j, sivu, sivu))
-                else:
-                    pygame.draw.rect(ikkuna, (0, 120, 0),
+            if (i,j) in reitti:
+                pygame.draw.rect(ikkuna, (250, 250, 250),
+                pygame.Rect(sivu*i+erotus, sivu*j, sivu, sivu))
+            elif (i,j) in vieraillut:
+                    pygame.draw.rect(ikkuna, (0, 0, 180),
                     pygame.Rect(sivu*i+erotus, sivu*j, sivu, sivu))
 
     ikkuna.blit(fontti.render(f"Aika: {aika}",True,(200,0,0)),(erotus+15,ruudukon_koko+sivu+15))
+    ikkuna.blit(fontti.render(f"Reitin pituus: {matka}",True,(200,0,0)),(erotus+15,ruudukon_koko+sivu+45))
 
     pygame.display.flip()
