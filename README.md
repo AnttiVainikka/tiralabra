@@ -3,8 +3,11 @@
 - [Viikkoraportti 1](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti1.md)
 - [Viikkoraportti 2](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti2.md)
 - [Viikkoraportti 3](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti3.md)
+- [Viikkoraportti 4](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/viikkoraportit/viikkoraportti4.md)
 ## Dokumentaatio
 - [Määrittelydokumentti](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/maarittelydokumentti.md)
+- [Toteutusdokumentti](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/toteutusdokumentti.md)
+- [Testausdokumentti](https://github.com/AnttiVainikka/tiralabra/blob/main/dokumentointi/testausdokumentti.md)
 ## Käyttöohje
 - Lataa tiedostot koneellesi.
 - Navigoi lataamaasi kansioon terminaalissa ja anna komento "poetry install".
