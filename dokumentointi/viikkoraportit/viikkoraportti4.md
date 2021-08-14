@@ -15,6 +15,6 @@ Reitin selvittämis funktioni ei vieläkään aina toimi. Etenkin, kun esteitä 
 
 Mietin myös riittääkö aika- ja tilavaatimuksiin algoritmeille jo valmiiksi määritetyt vaatimukset vai pitääkö alkaa itse tutkimaan algoritmeja ja määrittämään niiden vaatimuksia?
 ## Mitä seuraavaksi
-Alan luomaan funktioita algoritmien suorityskykyjen vertailua varten ja toivottavasti saan reitin selvittämisen toimimaan.
+Alan luomaan funktioita algoritmien suorituskykyjen vertailua varten ja toivottavasti saan reitin selvittämisen toimimaan.
 ## Käytetyt tunnit
 Noin 12.
