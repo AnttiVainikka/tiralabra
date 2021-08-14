@@ -7,7 +7,7 @@ Kaikki koodi on src-hakemistossa jaettuna kolmeen hakemistoon ja tiedostoon inde
 A* algoritmin aikavaativuus on O(n log n)^1/7 ja JPS algoritmin aikavaativuus on O(n log n)^1/10. (https://www.hindawi.com/journals/ijcgt/2015/736138/tab1/)
 Tilavaativuudet ovat molemmilla algoritmeilla samat kuin melkein kaikilla reittialgoritmeilla, sillä kaikki ruudut pidetään muistissa. (https://en.wikipedia.org/wiki/A*_search_algorithm#Complexity)
 ## Suorituskyky vertailu
-Aion tehdä funktion, joka generoi ja ratkaisee erilaisia ruudukoita käyttäen molempien algoritmia ja vertaa niiden tehokkuutta. Esimerkiksi laitan molemmat algoritmit selvittämään 500 x 500 ruudukon ilman esteitä 10 kertaa ja vertaan suoritusaikoja. Toisena testinä voin laittaa algoritmit selvittämään ruudukkoja, joissa on tiheästi esteitä eikä välttämättä mahdollisuutta päästä maaliin. 
+Aion tehdä funktion, joka generoi ja ratkaisee erilaisia ruudukoita käyttäen molempien algoritmia ja vertaa niiden tehokkuutta. Esimerkiksi laitan molemmat algoritmit selvittämään 500 x 500 ruudukon ilman esteitä 10 kertaa ja vertaan suoritusaikoja. Toisena testinä voin laittaa algoritmit selvittämään ruudukkoja, joissa on tiheästi esteitä eikä välttämättä mahdollisuutta päästä maaliin. Myös sovellusta käyttäessä ohjelma kertoo kauanko reitin etsimisessä kesti. Tällöin ei kuitenkaan voida testata suurilla syötteillä, koska silloin ratkaisujen sekä ruudukoiden piirtämisessä kestää liian kauan. Toisaalta voi nähdä millaisten ruudukoiden ratkaisuaikoja verrataan.
 ## Puutteet ja parannusehdotukset
 Käyttöliittymä on vielä puutteellinen. Esimerkiksi reitit eivät aina piirry oikein.
 ## Lähteet
