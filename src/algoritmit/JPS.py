@@ -13,12 +13,27 @@ def lyhyin_reitti_jps(ruudukko):
     vieraillut = []
     reitti = {}
 
-    hypyt = [[0,aloitus_ruutu,0]]
+    aloitushypyt = [[0,aloitus_ruutu,(1,1)],[0,aloitus_ruutu,(1,-1)],
+    [0,aloitus_ruutu,(-1,1)],[0,aloitus_ruutu,(-1,-1)]]
+
+    #Lisätään ensimmäiseksi suunnaksi se, joka lähtee loppuruutua kohti
+    hypyt = []
+    if aloitus_ruutu[0] <= loppu_ruutu[0] and aloitus_ruutu[1] <= loppu_ruutu[1]:
+        hypyt.append(aloitushypyt[0])
+    if aloitus_ruutu[0] <= loppu_ruutu[0] and aloitus_ruutu[1] >= loppu_ruutu[1]:
+        hypyt.append(aloitushypyt[1])
+    if aloitus_ruutu[0] >= loppu_ruutu[0] and aloitus_ruutu[1] <= loppu_ruutu[1]:
+        hypyt.append(aloitushypyt[2])
+    if aloitus_ruutu[0] >= loppu_ruutu[0] and aloitus_ruutu[1] >= loppu_ruutu[1]:
+        hypyt.append(aloitushypyt[3])
+    #Lisätään loput suunnat
+    for hyppy in aloitushypyt:
+        if hyppy not in hypyt:
+            hypyt.append(hyppy)
+
     while len(hypyt) != 0:
         suunta = hypyt[0][2]
         ruutu = hypyt.pop(0)[1]
-        if ruutu == aloitus_ruutu and suunta != 0:
-            continue
         try:
             if vierailtu[(ruutu,suunta)]:
                 continue
@@ -27,18 +42,18 @@ def lyhyin_reitti_jps(ruudukko):
 
         vieraillut.append(ruutu)
 
-        #suoritetaan haku ruudusta haluttuihin suuntiin ja lisätään mahdolliset hyppykohdat listaan
-        if suunta in ((1,1),0):
+        #suoritetaan haku ruudusta haluttuun suuntaan ja lisätään mahdolliset hyppykohdat listaan
+        if suunta == (1,1):
+            #jos haku palauttaa True, se on löytänyt loppuruudun ja voimme palauttaa tulokset
             if viisto_haku(ruutu,(1,1),pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
-                #jos haku palauttaa True, se on löytänyt loppuruudun ja voimme palauttaa tulokset
                 return [vieraillut,reitti]
-        if suunta in ((1,-1),0):
+        if suunta == (1,-1):
             if viisto_haku(ruutu,(1,-1),pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
                 return [vieraillut,reitti]
-        if suunta in ((-1,1),0):
+        if suunta == (-1,1):
             if viisto_haku(ruutu,(-1,1),pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
                 return [vieraillut,reitti]
-        if suunta in ((-1,-1),0):
+        if suunta == (-1,-1):
             if viisto_haku(ruutu,(-1,-1),pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
                 return [vieraillut,reitti]
 
