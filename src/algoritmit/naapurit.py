@@ -1,5 +1,5 @@
 from math import sqrt
-def etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,lista,algoritmi):
+def etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,lista):
     """Etsii kaikki ruudun naapurit ja käy ne läpi etsien
     loppuruutua ja lisäten ne heurestiikan kanssa listaan."""
     oikea = False
@@ -49,10 +49,7 @@ def etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,list
             reitti[naapuri] = ruutu
             matka[naapuri] = uusi_matka
             heurestiikka = sqrt((naapuri[0]-loppu_ruutu[0])**2 + (naapuri[1]-loppu_ruutu[1])**2)
-            if algoritmi == "A*":
-                lista.append([uusi_matka + heurestiikka,naapuri])
-            else:
-                lista.append([uusi_matka + heurestiikka,naapuri,(0,0)])
+            lista.append([uusi_matka + heurestiikka,naapuri])
             lista.sort()
 
     #Tehdään sama viistonaapureille, mutta lisätään matkaan sqrt(2) yhden sijaan
@@ -69,10 +66,7 @@ def etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,list
             reitti[naapuri] = ruutu
             matka[naapuri] = uusi_matka
             heurestiikka = sqrt((naapuri[0]-loppu_ruutu[0])**2 + (naapuri[1]-loppu_ruutu[1])**2)
-            if algoritmi == "A*":
-                lista.append([uusi_matka + heurestiikka,naapuri])
-            else:
-                lista.append([uusi_matka + heurestiikka,naapuri,(0,0)])
+            lista.append([uusi_matka + heurestiikka,naapuri])
             lista.sort()
 
     return False

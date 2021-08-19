@@ -20,7 +20,7 @@ def lyhyin_reitti_a(ruudukko):
             continue
         vierailtu[ruutu] = True
         vieraillut.append(ruutu)
-        ratkaisu = etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,lista,"A*")
+        ratkaisu = etsi_naapurit(ruutu,pituus,ruudukko,reitti,loppu_ruutu,vieraillut,matka,lista)
         if ratkaisu:
             return ratkaisu
 

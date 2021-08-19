@@ -1,6 +1,6 @@
 import unittest
 from algoritmit.A import lyhyin_reitti_a
-from ruudukko.ruudukko import generoi_ruudukko, ruudukko1
+from ruudukko.ruudukko import generoi_ruudukko, ruudukko1, ruudukko2
 
 class TestAlgoritmiA(unittest.TestCase):
 
@@ -15,5 +15,10 @@ class TestAlgoritmiA(unittest.TestCase):
 
     def test_algoritmi_selvittaa_ruudukko_1(self):
         ruudukko = ruudukko1()
+        ratkaisu = lyhyin_reitti_a(ruudukko)
+        self.assertTrue(ratkaisu is not False)
+
+    def test_algoritmi_selvittaa_ruudukko_2(self):
+        ruudukko = ruudukko2()
         ratkaisu = lyhyin_reitti_a(ruudukko)
         self.assertTrue(ratkaisu is not False)

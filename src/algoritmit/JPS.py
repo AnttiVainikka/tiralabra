@@ -17,6 +17,8 @@ def lyhyin_reitti_jps(ruudukko):
     while len(hypyt) != 0:
         suunta = hypyt[0][2]
         ruutu = hypyt.pop(0)[1]
+        if ruutu == aloitus_ruutu and suunta != 0:
+            continue
         try:
             if vierailtu[(ruutu,suunta)]:
                 continue
@@ -64,8 +66,9 @@ def viisto_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
         #lopettaa haun, jos törmätään läpipääsemättömään ruutuun
         if ruudukko[ruutu] == -1:
             return
-        matka[ruutu] = nykyinen_matka
-        reitti[ruutu] = lahto_ruutu
+        if nykyinen_matka <= matka[ruutu]:
+            matka[ruutu] = nykyinen_matka
+            reitti[ruutu] = lahto_ruutu
 
 
 def horisontaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
@@ -124,7 +127,6 @@ def vertikaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reit
     lahto_ruutu = ruutu
     nykyinen_matka = matka[ruutu]
     while True:
-
         try:
             #jos vasemmalla oleva ruutu on läpipääsemätön ja sen viereiseen
             #ruutuun voidaan kulkea, ruutu lisätään hyppykohtiin
