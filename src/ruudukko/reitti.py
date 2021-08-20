@@ -11,7 +11,7 @@ def maarita_reitti(reitti,ruutu,aloitus_ruutu):
             ruutu = reitti[ruutu]
 
             try:
-                if tutkittu[ruutu] == True:
+                if tutkittu[ruutu] is True:
                     break
             except KeyError:
                 pass
@@ -37,7 +37,7 @@ def maarita_reitti(reitti,ruutu,aloitus_ruutu):
                     while alkuperainen[0] > ruutu[0]+kerroin and alkuperainen[1] + kerroin < ruutu[1]:
                         reitti_lista.append((alkuperainen[0]-kerroin,alkuperainen[1]+kerroin))
                         kerroin += 1
-                
+
                 if alkuperainen[0] < ruutu[0] and alkuperainen[1] > ruutu[1]:
                     kerroin = 1
                     while alkuperainen[0] + kerroin < ruutu[0] and alkuperainen[1] > ruutu[1] + kerroin:

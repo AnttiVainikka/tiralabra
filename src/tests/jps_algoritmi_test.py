@@ -15,7 +15,7 @@ class TestAlgoritmiJPS(unittest.TestCase):
             if ratkaisu is False:
                 oikein = False
         self.assertEqual(oikein,True)
-    
+
     def test_algoritmi_selvittaa_ruudukko_1(self):
         ruudukko = ruudukko1()
         ratkaisu = lyhyin_reitti_jps(ruudukko)
@@ -28,7 +28,7 @@ class TestAlgoritmiJPS(unittest.TestCase):
 
     def test_algoritmien_tulokset_samat(self):
         oikein = True
-        for i in range(100):
+        for _ in range(100):
             pituus = randint(10,100)
             ruudukko = generoi_ruudukko(pituus,randint(0,5))
             loppuruutu = ruudukko[4]

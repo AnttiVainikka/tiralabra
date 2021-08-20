@@ -7,8 +7,8 @@ from kayttoliittyma.ruudukko import piirra_ruudukko,piirra_ratkaisu
 from algoritmit.A import lyhyin_reitti_a
 from algoritmit.JPS import lyhyin_reitti_jps
 
-pituus = 200
-esteet = 0
+pituus = 20
+esteet = 1
 ruudukko = generoi_ruudukko(pituus,esteet)
 #ruudukko = ruudukko1()
 #ruudukko = ruudukko2()
@@ -58,5 +58,3 @@ while True:
             if event.key == pygame.K_RETURN:
                 ruudukko = generoi_ruudukko(pituus,esteet)
                 piirra_ruudukko(ruudukko[0],ruudukko[5])
-
-#https://app.mindmup.com/map/_free/2021/08/763e8980fca711eb8c427fec12ce2f16
