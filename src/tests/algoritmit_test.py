@@ -7,24 +7,27 @@ from ruudukko.resetointi import resetoi_ruudukko
 
 class TestAlgoritmiJPS(unittest.TestCase):
 
-    def test_algoritmi_loytaa_ratkaisun(self):
-        oikein = True
-        for _ in range(20):
-            ruudukko = generoi_ruudukko(20,0)
-            ratkaisu = lyhyin_reitti_jps(ruudukko)
-            if ratkaisu is False:
-                oikein = False
-        self.assertEqual(oikein,True)
-
-    def test_algoritmi_selvittaa_ruudukko_1(self):
+    def test_algoritmit_selvittaa_ruudukko_1(self):
         ruudukko = ruudukko1()
-        ratkaisu = lyhyin_reitti_jps(ruudukko)
-        self.assertTrue(ratkaisu is not False)
+        loppuruutu = ruudukko[4]
+        matka = ruudukko[2]
+        lyhyin_reitti_jps(ruudukko)
+        ratkaisu_jps = matka[loppuruutu]
+        resetoi_ruudukko(ruudukko[0],ruudukko[1],matka,15)
+        lyhyin_reitti_a(ruudukko)
+        ratkaisu_a = matka[loppuruutu]
+        self.assertAlmostEqual(ratkaisu_jps,ratkaisu_a)
 
-    def test_algoritmi_selvittaa_ruudukko_2(self):
+    def test_algoritmit_selvittaa_ruudukko_2(self):
         ruudukko = ruudukko2()
-        ratkaisu = lyhyin_reitti_jps(ruudukko)
-        self.assertTrue(ratkaisu is not False)
+        loppuruutu = ruudukko[4]
+        matka = ruudukko[2]
+        lyhyin_reitti_jps(ruudukko)
+        ratkaisu_jps = matka[loppuruutu]
+        resetoi_ruudukko(ruudukko[0],ruudukko[1],matka,20)
+        lyhyin_reitti_a(ruudukko)
+        ratkaisu_a = matka[loppuruutu]
+        self.assertAlmostEqual(ratkaisu_jps,ratkaisu_a)
 
     def test_algoritmien_tulokset_samat(self):
         oikein = True
