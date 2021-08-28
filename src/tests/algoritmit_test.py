@@ -5,7 +5,7 @@ from algoritmit.A import lyhyin_reitti_a
 from ruudukko.ruudukko import generoi_ruudukko,ruudukko1,ruudukko2
 from ruudukko.resetointi import resetoi_ruudukko
 
-class TestAlgoritmiJPS(unittest.TestCase):
+class TestAlgoritmit(unittest.TestCase):
 
     def test_algoritmit_selvittaa_ruudukko_1(self):
         ruudukko = ruudukko1()
