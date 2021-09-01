@@ -63,11 +63,18 @@ def viisto_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
     """Tutkii ruutuja viistoon haluttuun suuntaan"""
     lahto_ruutu = ruutu
     nykyinen_matka = matka[ruutu]
+    hyppykohta = False
     while True:
-        if horisontaalinen_haku(ruutu,suunta[0],pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
+        haku = horisontaalinen_haku(ruutu,suunta[0],pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti)
+        if haku == 0:
             return True
-        if vertikaalinen_haku(ruutu,suunta[1],pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
+        if haku == 1:
+            hyppykohta = True
+        haku = vertikaalinen_haku(ruutu,suunta[1],pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti)
+        if haku == 0:
             return True
+        if haku == 1:
+            hyppykohta = True
         ruutu = (ruutu[0]+suunta[0],ruutu[1]+suunta[1])
         nykyinen_matka += sqrt(2)
         #lopettaa haun, jos mennään ruudukon rajojen yli
@@ -84,16 +91,22 @@ def viisto_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
         if nykyinen_matka <= matka[ruutu]:
             matka[ruutu] = nykyinen_matka
             reitti[ruutu] = lahto_ruutu
-
+        #lopettaa haun ja lisää ruudun hyppykohtiin, jos uusi hyppykohta on löydetty
+        if hyppykohta:
+            heurestiikka = sqrt((ruutu[0]-loppu_ruutu[0])**2 + (ruutu[1]-loppu_ruutu[1])**2)
+            hypyt.append([nykyinen_matka+heurestiikka,ruutu,suunta])
+            hypyt.sort()
+            return
 
 def horisontaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
     """Tutkii ruutuja horisontaalisesti haluttuun suuntaan"""
     lahto_ruutu = ruutu
     nykyinen_matka = matka[ruutu]
+    hyppykohta = -1
     while True:
 
         try:
-            #jos ylla oleva ruutu on läpipääsemätön ja sen viereiseen
+            #jos yllä oleva ruutu on läpipääsemätön ja sen viereiseen
             #ruutuun voidaan kulkea, ruutu lisätään hyppykohtiin
             if ruudukko[(ruutu[0],ruutu[1]-1)] == -1 and ruudukko[(ruutu[0]+suunta,ruutu[1]-1)] != -1:
                 if nykyinen_matka <= matka[ruutu]:
@@ -103,6 +116,7 @@ def horisontaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,re
                     if ruutu != lahto_ruutu:
                         reitti[ruutu] = lahto_ruutu
                     hypyt.sort()
+                    hyppykohta = 1
         except KeyError:
             #jos jompikumpi tutkituista ruuduista ei kuulu ruudukkoon,
             #niin tulee KeyError eikä hyppykohtaa luoda
@@ -119,28 +133,32 @@ def horisontaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,re
                     if ruutu != lahto_ruutu:
                         reitti[ruutu] = lahto_ruutu
                     hypyt.sort()
+                    hyppykohta = 1
         except KeyError:
             pass
 
         nykyinen_matka += 1
         ruutu = (ruutu[0]+suunta,ruutu[1])
-        #lopettaa haun, jos mennään ruudukon rajojen yli
+        #lopettaa haun, jos mennään ruudukon rajojen yli,
+        #ja palauttaa tiedon löytyikö hyppykohtaa
         if ruutu[0] > pituus or ruutu[0] < 1:
-            return
-        #lopettaa haun ja palauttaa True, jos törmätään loppuruutuun
+            return hyppykohta
+        #lopettaa haun ja palauttaa 0, jos törmätään loppuruutuun
         if ruutu == loppu_ruutu:
             matka[loppu_ruutu] = nykyinen_matka
             reitti[ruutu] = lahto_ruutu
-            return True
-        #lopettaa haun, jos törmätään läpipääsemättömään ruutuun
+            return 0
+        #lopettaa haun, jos törmätään läpipääsemättömään ruutuun,
+        #ja palauttaa tiedon löytyikö hyppykohtaa
         if ruudukko[ruutu] == -1:
-            return
+            return hyppykohta
 
 
 def vertikaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reitti):
     """Tutkii ruutuja vertikaalisesti haluttuun suuntaan"""
     lahto_ruutu = ruutu
     nykyinen_matka = matka[ruutu]
+    hyppykohta = -1
     while True:
         try:
             #jos vasemmalla oleva ruutu on läpipääsemätön ja sen viereiseen
@@ -153,6 +171,7 @@ def vertikaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reit
                     if ruutu != lahto_ruutu:
                         reitti[ruutu] = lahto_ruutu
                     hypyt.sort()
+                    hyppykohta = 1
         except KeyError:
             #jos jompikumpi tutkituista ruuduista ei kuulu ruudukkoon,
             #niin tulee KeyError eikä hyppykohtaa luoda
@@ -168,19 +187,23 @@ def vertikaalinen_haku(ruutu,suunta,pituus,ruudukko,loppu_ruutu,matka,hypyt,reit
                     hypyt.append([nykyinen_matka+heurestiikka,ruutu,(1,suunta)])
                     if ruutu != lahto_ruutu:
                         reitti[ruutu] = lahto_ruutu
+                    hypyt.sort()
+                    hyppykohta = 1
         except KeyError:
             pass
 
         nykyinen_matka += 1
         ruutu = (ruutu[0],ruutu[1]+suunta)
-        #lopettaa haun, jos mennään ruudukon rajojen yli
+        #lopettaa haun, jos mennään ruudukon rajojen yli,
+        #ja palauttaa tiedon löytyikö hyppykohtaa
         if ruutu[1] > pituus or ruutu[1] < 1:
-            return
-        #lopettaa haun ja palauttaa True, jos törmätään loppuruutuun
+            return hyppykohta
+        #lopettaa haun ja palauttaa 0, jos törmätään loppuruutuun
         if ruutu == loppu_ruutu:
             matka[loppu_ruutu] = nykyinen_matka
             reitti[ruutu] = lahto_ruutu
-            return True
-        #lopettaa haun, jos törmätään läpipääsemättömään ruutuun
+            return 0
+        #lopettaa haun, jos törmätään läpipääsemättömään ruutuun,
+        #ja palauttaa tiedon löytyikö hyppykohtaa
         if ruudukko[ruutu] == -1:
-            return
+            return hyppykohta
